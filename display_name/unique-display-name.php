@@ -1,10 +1,10 @@
 <?php
 // TARKISTAA ONKO UUSI NÄYTÖNIMI JO KÄYTÖSSÄ
 // pre_user_display_name koska tarkistaa asian ENNEN tiedon tallentamista
-add_filter( 'pre_user_display_name', 'adalmina_check_display_name' );
+add_filter( 'pre_user_display_name', 'check_display_name' );
 	
 //Funktio saa syötetyn näyttönimen parametriksi
-function adalmina_check_display_name($nameToCheck) {
+function check_display_name($nameToCheck) {
 	//Siirtää syötetyn näyttönimen edelleen funktiolle, joka tarkistaa sen
 	if (display_name_exists($nameToCheck)) {
 		//Käyttäjää jolla syötetty näyttönimi on olemassa
